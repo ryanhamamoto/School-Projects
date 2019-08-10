@@ -1,0 +1,10 @@
+lrc.c
+-plays the game "Left Right Center" using celebrity names and a 6 sided dice.
+Enter in a seed number for use in randomizing the rolling sequences and a 
+number of players less than 10 to get the game started. The rolling sequences
+and outcomes are displayed until one player wins, with the pot and leftover
+currency displayed. If the same seed number and amount of players is entered,
+the same game will be played again.
+
+makefile
+-allows for the use of "make" to create an executable out of lrc.

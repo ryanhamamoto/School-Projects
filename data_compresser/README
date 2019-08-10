@@ -1,0 +1,41 @@
+Ryan Hamamoto
+Team Member: Cori Calabi
+
+I wrote the decoder, and Cori wrote the encoder. I wrote the functions in huffman.c that have my name written
+above them (loadTree, getNextBit, stepTree, delTree) while we both worked together on join and newNode. We worked
+together on changing stack from what was given on piazza.
+
+I provided mergesort but she decided to use insertionsort, and decided to use her old bit vector code for her
+encoder.
+
+queue.c, and queue.h were strictly written by Darrell Long. Only stack.c, stack.h, and code.h were modified by us
+based off of Darrell Long's code.
+
+Once make is called, the user can either ./decode or ./encode a file. To indicate an input file, place '-i' on the
+command line followed by the name of the desired file to be encoded/decoded. To indicate an output file, place '-o'
+on the command line followed by the name of the desired file to dump the encoded/decoded file onto. If no output
+file is identified, the output of encoding/decoding is written to stdout. Use '-v' to gain statistics about the
+huffman encoding/decoding.
+
+Makefile
+	Supports "make" and "make all" which creates both the encode and decode executables. If the user chooses,
+	they can type "make encode" which will only make the encode executable, or "make decode" which will only
+	make the decode executable.
+
+encode.c
+	contains main() for encoding and utilizes bitV, code, and queue libraries to build the encoded file.
+
+decode.c
+	contains main() for decoding and utilizes the stack and huffman libraries to generate the huffman tree
+	necessary for the binary bits that follow the tree instructions and file information to be decoded.
+
+huffman.c & huffman.h
+	Contains code for manipulating the huffman trees, used for dumping them onto a file, generating the tree,
+	building the tree, stepping through the tree, etc. Utilized by both the encoder and decoder.
+
+stack.c & stack.h
+	The library containing stack functions, used for creating the huffman tree out of the encoded file.
+
+bitV.c, bitV.h, is.c, is.h, queue.c, queue.h	
+	Used by the encoder to generate the huffman tree based on histogram counts (sorting them and pointer
+	directing) as well as the bit vector that follows giving instructions for how to traverse the tree.

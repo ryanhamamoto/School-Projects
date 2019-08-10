@@ -1,0 +1,13 @@
+Ryan Hamamoto
+
+Makefile
+	supports 'make' 'make all' 'make increment' and 'make clean'. Increment is linked to
+	the pthreads library.
+
+increment.c
+	in order to operate increment, type -n (thread count) after ./increment. If a thread
+	count is not specified, an error message will occur. If nothing is specified, nothing
+	will occur. if -n is specified without an argument, you will be prompted for an
+	argument. The output is the result of each thread incrementing a counter 1000 times,
+	therefore the result should always be 1000 times the thread count specified. This
+	is a thread safe program, therefore, this number will always be the same.

@@ -1,0 +1,37 @@
+Ryan Hamamoto
+CMPS 12B
+
+The list of proscribed words must be provided as badspeak.txt.
+The replacementmapping must be provided as newspeak.txt.
+
+./banhammer has the following options (can be inputed in any order or combination):
+
+./banhammer -s will suppress the letter from the censor, and instead print the statistics that were
+computed.
+./banhammer -h size specifies that the hash table will have size entries (the default will be 10000).
+./banhammer -f size specifies that the Bloom filter will have size entries (the default will be 220).
+./banhammer -m will use the move-to-front rule.
+./banhammer -b will not use the move-to-front rule.
+
+
+aes.h aes.c
+	contains functionality to implement hash functions
+bf.c bf.h
+	a library of bloom filter functions that are used to implement the two initial bloom filters
+	filtering out badspeak
+ll.c ll.h
+	a library of linked list functions that are used to implement the hash table and bloom filters
+hash.c hash.h
+	a library of hash table functions that are used to implement the newspeak hashtable
+words.l
+	flex is called on this function to create lex.yy.c which is then compiled with the rest of the
+	functions (see makefile) and is used to tokenize user input into strings that can be filtered
+	and hashed.
+banhammer.c
+	contains main(), used to implement -s (shows statistics of operations), -h (to change the hash
+	table size) -f (to change the bloom filter size) -m (which will implement the move to front rule)
+	and -b (which will not implement the move to front rule). Sends user input through two bloom filters
+	to filter out badspeak and one hash table to correlate newspeak with words that were deemed
+	inappropriate.
+Makefile
+	supports make, make all (generate executables), make clean (delete executables and object files).

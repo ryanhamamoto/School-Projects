@@ -1,0 +1,23 @@
+Files for Assignment1:
+
+sieve.c
+	Written by Darrell Long, this program creates a bit vector indicating which
+	numbers in the sequence are primes and which are not.
+sieve.h
+	The header file that contains the functions in which sieve.c defines.
+bv.c
+	A function library called by sieve.c, provides functionality for implementing
+	the sieve function. Functions have the ability to set individual bits to 1 or 0,
+	free memory, and return the length and value of the bit vector or specific values
+	within the bit vector.
+bv.h
+	the header file that contains the functions in which bv.c defines.
+parfait.c
+	contains main(), calls both sieve and bv in order to automatically generate
+	a list ranging form 2 to 100000 indicating which numbers are prime, composite,
+	and perfect. It also gives the prime factorization of composite numbers and proper
+	divisors of perfect numbers.
+Makefile
+	create the executable "parfait" by typing "make" into the console. parfait can then
+	be run by typing "./parfait", automatically generating the list that ends at 100000.
+	Call "make clean" to delete the files created by "make".

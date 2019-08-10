@@ -1,0 +1,51 @@
+Ryan Hamamoto
+CMPS12B
+
+bubblesort.h, insertionsort.h, mergesort.h, minsort.h, quicksort.h
+	contains the function declarations for their corresponding .c files
+
+bv.h
+	taken from piazza post 474, Author is Prof. Darrell Long. These functions
+	were used to create the bitvector corresponding with each user input.
+
+All of these algorithms were derived off of the pseudocode given in the lab
+manual and explanations of their functions.
+
+mergesort.c
+	sorts a randomly generated list by dividing it up into smaller lists until
+	there is only one integer in each list, then merges them back together.
+
+minsort.c
+	a more basic sorting alghorithm, this sort takes a randomly generated list
+	and sorts it by repeatedly finding the smallest element and swapping it to
+	the front of the list. Author is Prof. Darrell Long.
+
+quicksort.c
+	A recursive sort based around a randomly selected pivot point, creates two
+	seperate lists with the list to the left of the pivot being less than the
+	pivot, and the list to the right of the pivot being greater than.
+
+bubblesort.c
+	This sort looks at pairs of integers in the list and swaps them if the right
+	integer is greater than the left integer.
+
+insertionsort.c
+	Builds the sorted list one item at a time by inserting it into its correct
+	position in the array. Less efficient than quicksort.
+
+sorting.c
+	contains the testing harness for executing each of these sorts with however
+	many items and any random seed value. The defaults for these values are:
+	random seed: 8062022
+	print: 100 items of the array
+	array size: 100 items
+	change the seed with -r (seed), the print with -p (printValue), and the
+	array size with -n (arraySize). request all sorts with -A, quicksort with
+	-q, mergesort with -M, minsort with -m, and bubble sort with -b. Enter
+	these commands on the command line after the execution command.
+
+Makefile
+	supports 'make all' and 'make' to build the executable, and 'make clean' 
+	to delete all object files and executables. 'make' will create the 
+	executable 'sorting', in which './sorting -(commands)' will allow the
+	usage of the test harness.
